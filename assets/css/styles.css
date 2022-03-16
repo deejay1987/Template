@@ -1,0 +1,232 @@
+* {
+  box-sizing: border-box;
+  margin: auto 0;
+  padding: 0;
+}
+#wrapper {
+  padding: 25px;
+}
+#wrapper form {
+  border: 1px solid #cdd5e6;
+  padding-bottom: 25px;
+}
+#wrapper form #template_header {
+  align-items: center;
+  border-bottom: 2px solid #cdd5e6;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 50px;
+  padding: 25px;
+}
+#wrapper form #template_header #template::after {
+  content: ">";
+  padding: 0 5px;
+}
+#wrapper form #template_header ul {
+  display: flex;
+  margin: 0;
+  padding: 0px;
+}
+#wrapper form #template_header ul li {
+  list-style: none;
+}
+#wrapper form #template_header ul li a {
+  text-decoration: none;
+}
+#wrapper form #template_header .action_btn {
+  display: flex;
+  justify-content: space-between;
+  width: 250px;
+}
+#wrapper form #template_header .action_btn #save_draft_btn,
+#wrapper form #template_header .action_btn #publish_btn {
+  background-color: transparent;
+  border-radius: 5px;
+  border: 1px solid #0faf93;
+  color: #0faf93;
+  cursor: pointer;
+  font-weight: 600;
+  padding: 10px;
+  width: 116px;
+}
+#wrapper form #template_header .action_btn #publish_btn {
+  background-color: #0faf93;
+  color: white;
+}
+#wrapper form #sample_template_container {
+  margin-bottom: 30px;
+  padding: 0 25px;
+}
+#wrapper form #sample_template_container #sample_template {
+  border-bottom: 1px solid #cdd5e6;
+  border-left: none;
+  border-right: none;
+  border-top: none;
+  font-size: 32px;
+  height: 51px;
+  overflow: hidden;
+  resize: none;
+  width: 75%;
+}
+#wrapper form #sample_template_container #sample_template:focus {
+  outline: none;
+  border-bottom: 1px solid #0faf93;
+}
+#wrapper form #sample_template_container #sample_template::placeholder {
+  color: #25324b;
+  font-weight: 600;
+}
+#wrapper form #template_question_container {
+  margin-bottom: 30px;
+  padding: 0 25px;
+}
+#wrapper form #template_question_container .template_question {
+  border-radius: 10px;
+  border: 1px solid #cdd5e6;
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 32px;
+  padding: 25px;
+}
+#wrapper form #template_question_container .template_question #write_question_here {
+  border-bottom: 1px solid #cdd5e6;
+  border-left: none;
+  border-right: none;
+  border-top: none;
+  font-size: 22px;
+  height: 32px;
+  margin-bottom: 30px;
+  overflow: hidden;
+  resize: none;
+  width: 90%;
+}
+#wrapper form #template_question_container .template_question #write_question_here:focus {
+  outline: none;
+  border-bottom: 1px solid #0faf93;
+}
+#wrapper form #template_question_container .template_question #write_question_here::placeholder {
+  color: #626C7F;
+  font-size: 16px;
+}
+#wrapper form #template_question_container .template_question #add_option_action {
+  display: flex;
+  width: 60%;
+}
+#wrapper form #template_question_container .template_question #add_option_action .radio_option {
+  border: 1px solid black;
+  border-radius: 50%;
+  margin-right: 10px;
+  height: 24px;
+  width: 26px;
+}
+#wrapper form #template_question_container .template_question #add_option_action .add_option_btn {
+  background-color: transparent;
+  border: none;
+  color: #626C7F;
+  cursor: pointer;
+  display: flex;
+  width: 100%;
+}
+#wrapper form #template_question_container .template_question .question_header {
+  align-items: center;
+  display: flex;
+  height: 40px;
+  justify-content: space-between;
+  margin-bottom: 40px;
+  width: 100%;
+}
+#wrapper form #template_question_container .template_question .question_header #dropdown_menu {
+  border-radius: 5px;
+  border: 1px solid #cdd5e6;
+  color: #25324b;
+  cursor: pointer;
+  font-weight: 600;
+  opacity: .7;
+  padding: 10px;
+}
+#wrapper form #template_question_container .template_question .question_header #duplicate_delete_btn {
+  display: flex;
+  justify-content: space-between;
+  width: 50px;
+}
+#wrapper form #template_question_container .template_question .question_header #duplicate_delete_btn .duplicate_btn,
+#wrapper form #template_question_container .template_question .question_header #duplicate_delete_btn .delete_btn {
+  background-color: transparent;
+  border: none;
+  color: #a3afc9;
+  cursor: pointer;
+}
+#wrapper form #template_question_container .template_question .multiple_choice_question {
+  width: 100%;
+}
+#wrapper form #template_question_container .template_question .multiple_choice_question .hidden {
+  display: none;
+}
+#wrapper form #template_question_container .template_question .multiple_choice_question .question_option_answer {
+  margin-bottom: 5px;
+}
+#wrapper form #template_question_container .template_question .multiple_choice_question .question_option_answer:hover .remove_option_answer_btn {
+  display: inline-block;
+  background-color: transparent;
+  border: none;
+  vertical-align: top;
+}
+#wrapper form #template_question_container .template_question .multiple_choice_question .radio_option {
+  border-radius: 50%;
+  border: 1px solid black;
+  display: inline-flex;
+  height: 24px;
+  margin-right: 10px;
+  width: 24px;
+}
+#wrapper form #template_question_container .template_question .multiple_choice_question .option_text {
+  border: none;
+  vertical-align: top;
+  width: 80%;
+}
+#wrapper form #template_question_container .template_question .multiple_choice_question .option_text:focus {
+  outline: none;
+  border-bottom: 1px solid #0faf93;
+}
+#wrapper form #template_question_container .template_question .multiple_choice_question .remove_option_answer_btn {
+  display: none;
+}
+#wrapper form #add_question_container {
+  padding: 0 25px;
+}
+#wrapper form #add_question_container #add_question_btn {
+  background-color: transparent;
+  border-radius: 5px;
+  border: 1px solid #0faf93;
+  color: #0faf93;
+  cursor: pointer;
+  padding: 10px;
+  width: 100%;
+}
+/* Modal delete template*/
+.modal #delete_modal_form {
+  text-align: center;
+}
+.modal #delete_modal_form .fa-trash-can {
+  background-color: #eff2f7;
+  border-radius: 50%;
+  color: #626C7F;
+  padding: 15px;
+}
+.modal #delete_modal_form p {
+  margin-bottom: 10px;
+}
+.modal #delete_modal_form .action_btn .delete_btn_template,
+.modal #delete_modal_form .action_btn .cancel_btn {
+  border-radius: 5px;
+  border: 1px solid #626C7F;
+  color: #25324b;
+  padding: 3px;
+  width: 105px;
+}
+.modal #delete_modal_form .action_btn .cancel_btn {
+  background-color: #0faf93;
+  border: 1px solid #0faf93;
+  color: white;
+  margin: 0px 0px 0px 4px;
+}
