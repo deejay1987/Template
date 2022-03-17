@@ -69,7 +69,7 @@ $(document).ready(function(){
 
             clone_template_question.find(".question_option_answer").remove();
 
-            console.log(add_question_btn.siblings("#template_question_container").find(".write_question_here").val(""));
+            // console.log(add_question_btn.siblings("#template_question_container").find(".write_question_here").val(""));
 
             $("#template_question_container").append(clone_template_question);
         })
