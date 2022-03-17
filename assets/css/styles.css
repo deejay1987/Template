@@ -88,7 +88,7 @@
   margin-bottom: 32px;
   padding: 25px;
 }
-#wrapper form #template_question_container .template_question #write_question_here {
+#wrapper form #template_question_container .template_question .write_question_here {
   border-bottom: 1px solid #cdd5e6;
   border-left: none;
   border-right: none;
@@ -100,11 +100,11 @@
   resize: none;
   width: 90%;
 }
-#wrapper form #template_question_container .template_question #write_question_here:focus {
+#wrapper form #template_question_container .template_question .write_question_here:focus {
   outline: none;
   border-bottom: 1px solid #0faf93;
 }
-#wrapper form #template_question_container .template_question #write_question_here::placeholder {
+#wrapper form #template_question_container .template_question .write_question_here::placeholder {
   color: #626C7F;
   font-size: 16px;
 }
