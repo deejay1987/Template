@@ -45,7 +45,7 @@ $(document).ready(function(){
         })
         /* Cloning multiple choice add option */
         .on("click", ".add_option_btn", function(){
-            let multiple_choice_add_option = $(this).closest("#add_option_action").prev();
+            let multiple_choice_add_option = $(this).closest(".add_option_container").prev();
             let question_option_answer_clone = $(".question_option_answer_clone").clone();
 
             question_option_answer_clone.removeClass("hidden question_option_answer_clone")
@@ -58,10 +58,11 @@ $(document).ready(function(){
         .on("click", ".remove_option_answer_btn", function(){
             
             $(".multiple_choice_question div[data-option-id=" + $(this).closest(".question_option_answer").data("option-id") + "]").remove();
+
         })
         /* Cloning template question */
         .on("click", "#add_question_btn", function(){
-            let add_question_btn = $(this).closest("#add_question_container");
+            // let add_question_btn = $(this).closest("#add_question_container");
             let clone_template_question = $(".template_question_clone").clone();
             
             clone_template_question.removeClass("template_question_clone")
@@ -73,8 +74,19 @@ $(document).ready(function(){
 
             $("#template_question_container").append(clone_template_question);
         })
-        .on("change", "#dropdown_menu", function(){
-            let dropdown_menu = $(this);
-            console.log(dropdown_menu.val());
+        .on("change", "#select_dropdown_menu", function(){
+            let select_dropdown_menu = $(this).val();
+            let paragraph_container = $(".paragraph_container");
+
+            if(select_dropdown_menu == "1"){
+                paragraph_container.find(".paragraph_textarea").addClass("hidden");
+                paragraph_container.siblings(".write_question_here").removeClass("hidden").val("")
+                paragraph_container.siblings(".multiple_choice_question").find("#add_option_action").removeClass("hidden");
+            }
+            else{
+                paragraph_container.find(".paragraph_textarea").removeClass("hidden").val("");
+                paragraph_container.siblings(".write_question_here").addClass("hidden");
+                paragraph_container.siblings(".multiple_choice_question").find("#add_option_action").addClass("hidden");
+            }
         })
 });

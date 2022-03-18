@@ -35,11 +35,9 @@
             <div id="template_question_container">
                 <div data-template-id="1" class="template_question template_question_clone">
                     <div class="question_header">
-                        <select name="" id="dropdown_menu">
-                            <option value="1" >Multiple Choice</option>
+                        <select name="" id="select_dropdown_menu">
+                            <option value="1" selected="selected" >Multiple Choice</option>
                             <option value="2">Paragraph</option>
-                            <option value="3">Short Answer</option>
-                            <option value="4">Video Question</option>
                         </select>
                         <div id="duplicate_delete_btn">
                             <button type="button" class="duplicate_btn"><i class="fa fa-copy"></i></button>
@@ -47,7 +45,7 @@
                         </div>
                     </div>
 
-                    <textarea name="" class="write_question_here" placeholder="Write question here"></textarea>
+                    <textarea class="write_question_here" placeholder="Write question here"></textarea>
 
                     <!-- Input multiple choice option -->
                     <div class="multiple_choice_question">
@@ -56,11 +54,17 @@
                             <input type="text" class="option_text" placeholder="Type your answer here">
                             <button type="button" class="remove_option_answer_btn"><i class="fa fa-close"></i></button>
                         </div>
+                        <div id="add_option_action">
+                            <div class="choice_option"></div>
+                            <div class="add_option_container">
+                                <div class="radio_option"></div>
+                                <button type="button" class="add_option_btn">Add option</button>
+                            </div>
+                        </div>
                     </div>
 
-                    <div id="add_option_action">
-                        <div class="radio_option"></div>
-                        <button type="button" class="add_option_btn">Add option</button>
+                    <div class="paragraph_container">
+                        <textarea class="hidden paragraph_textarea" placeholder="Type your question here"></textarea>
                     </div>
                 </div>
             </div>
