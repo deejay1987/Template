@@ -88,6 +88,8 @@ $(document).ready(function(){
 
             // clear content of question_content
             question_content.empty();
+            multiple_choice_content_clone.find(".question_option_answer").empty();
+            multiple_choice_content_clone.find(".question_option_answer").removeClass("question_option_answer_clone");
 
             // base on value on dropdown, clone and append content to question_content
             if(select_dropdown_menu.val() == "1"){
