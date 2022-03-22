@@ -10,35 +10,39 @@ $(document).ready(function(){
         })
         /* Duplicate question template */
         .on("click", ".duplicate_btn", function() {
-            let clone_template_question = $(".template_question_clone").clone();
             
-            clone_template_question.removeClass("template_question_clone")
-                                    .attr("data-template-id", + count++);
+            /* find template_question of $(this) */
+            let duplicate_btn = $(this);
 
-            /* remove class hidden at question_option_answer_clone after duplicate the template question */
-            clone_template_question.find(".question_option_answer_clone").removeClass("hidden question_option_answer_clone").remove();
+            /* clone template_question */
+            let template_question = duplicate_btn.closest(".template_question").clone();
+            let question_id = count++;
 
-            $("#template_question_container").append(clone_template_question);
-        })
+            /* replace question_id of duplicated template_question */
+            template_question.attr("data-question_id", question_id);
+            template_question.attr("id", "template_question_" + question_id);
+
+            /* append clone */
+            $("#template_question_container").append(template_question);
+        })   
         .on("click", ".delete_btn", function() {
             let delete_btn = $(this).closest(".template_question");
-            let delete_template_modal = $("#delete_template_modal");
-
-            delete_template_modal.find(".delete_template_id").val(delete_btn.attr("data-template-id"));
+            let delete_template_modal = $("#delete_question_modal");
+            let delete_question_id = delete_btn.attr("data-question_id");
+            
+            delete_template_modal.find(".delete_question").val(delete_question_id);
 
             delete_template_modal.modal("show");
         })
         /* Remove template question */
-        .on("click", ".delete_btn_template", function() {  
-            let delete_btn_template = $(this);
+        .on("click", ".delete_question_btn", function() {  
+            let delete_question_btn = $(this);
+            let delete_question_id = delete_question_btn.siblings(".delete_question").val();
+            
+            // class instead of data-
+            $("#template_question_" + delete_question_id).remove();
 
-            $("#template_question_container div[data-template-id= "+ delete_btn_template.siblings(".delete_template_id").val() +"]").remove();
-
-            $("#delete_template_modal").modal("hide");
-        })
-        /* Hide delete modal */
-        .on("click", ".cancel_btn", function() {
-            $("#delete_template_modal").modal("hide");
+            $("#delete_question_modal").modal("hide");
         })
         /* Cloning multiple choice add option */
         .on("click", ".add_option_btn", function() {
@@ -59,28 +63,40 @@ $(document).ready(function(){
         /* Cloning template question */
         .on("click", "#add_question_btn", function() {
             let clone_template_question = $(".template_question_clone").clone();
+            let multiple_choice_content_clone = $(".multiple_choice_content_clone").clone();
+            // Use Javascript to get time in milliseconds; Use result as question_id
+            let question_id = count++;
             
             clone_template_question.removeClass("template_question_clone")
-                                    .attr("data-template-id", + count++);
+                                    .attr("data-question_id", question_id);
 
+            clone_template_question.attr("id", "template_question_" + question_id);
+            multiple_choice_content_clone.removeClass("multiple_choice_content_clone");  
+
+            clone_template_question.find(".question_content").html(multiple_choice_content_clone);
             clone_template_question.find(".question_option_answer").remove();
-            clone_template_question.find(".write_question_here").val("");
 
             $("#template_question_container").append(clone_template_question);
         })
-        .on("change", "#select_dropdown_menu", function() {
-            let select_dropdown_menu = $(this).val();
-            let paragraph_container = $(".paragraph_container");
+        .on("change", ".select_dropdown_menu", function() {
+            let select_dropdown_menu = $(this);
+            // find parent template_question
+            let template_question = select_dropdown_menu.closest(".template_question");
+            let question_content = template_question.find(".question_content");
+            let paragraph_container = $(".paragraph_content_clone").clone().removeClass("paragraph_content_clone");
+            let multiple_choice_content_clone = $(".multiple_choice_content_clone").clone().removeClass("multiple_choice_content_clone");
 
-            if(select_dropdown_menu == "1"){
-                paragraph_container.find(".paragraph_textarea").addClass("hidden");
-                paragraph_container.siblings(".write_question_here").removeClass("hidden").val("")
-                paragraph_container.siblings(".multiple_choice_question").find("#add_option_action").removeClass("hidden");
+            // clear content of question_content
+            question_content.empty();
+
+            // base on value on dropdown, clone and append content to question_content
+            if(select_dropdown_menu.val() == "1"){
+                question_content.html(multiple_choice_content_clone);
             }
             else{
-                paragraph_container.find(".paragraph_textarea").removeClass("hidden").val("");
-                paragraph_container.siblings(".write_question_here").addClass("hidden");
-                paragraph_container.siblings(".multiple_choice_question").find("#add_option_action").addClass("hidden");
+                question_content.html(paragraph_container);
             }
+            /* To do */
+            /* add selected = "selected" to clicked option */
         })
 });

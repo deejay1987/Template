@@ -56,11 +56,11 @@
   background-color: #0faf93;
   color: white;
 }
-#wrapper form #sample_template_container {
+#wrapper form #sample_template_title {
   margin-bottom: 30px;
   padding: 0 25px;
 }
-#wrapper form #sample_template_container #sample_template {
+#wrapper form #sample_template_title #sample_template {
   border-bottom: 1px solid #cdd5e6;
   border-left: none;
   border-right: none;
@@ -71,11 +71,11 @@
   resize: none;
   width: 75%;
 }
-#wrapper form #sample_template_container #sample_template:focus {
+#wrapper form #sample_template_title #sample_template:focus {
   outline: none;
   border-bottom: 1px solid #0faf93;
 }
-#wrapper form #sample_template_container #sample_template::placeholder {
+#wrapper form #sample_template_title #sample_template::placeholder {
   color: #25324b;
   font-weight: 600;
 }
@@ -91,7 +91,7 @@
   margin-bottom: 32px;
   padding: 25px;
 }
-#wrapper form #template_question_container .template_question .write_question_here {
+#wrapper form #template_question_container .template_question .question_title {
   border-bottom: 1px solid #cdd5e6;
   border-left: none;
   border-right: none;
@@ -103,11 +103,11 @@
   resize: none;
   width: 90%;
 }
-#wrapper form #template_question_container .template_question .write_question_here:focus {
+#wrapper form #template_question_container .template_question .question_title:focus {
   outline: none;
   border-bottom: 1px solid #0faf93;
 }
-#wrapper form #template_question_container .template_question .write_question_here::placeholder {
+#wrapper form #template_question_container .template_question .question_title::placeholder {
   color: #626C7F;
   font-size: 16px;
 }
@@ -119,45 +119,49 @@
   margin-bottom: 40px;
   width: 100%;
 }
-#wrapper form #template_question_container .template_question .question_header #select_dropdown_menu {
+#wrapper form #template_question_container .template_question .question_header .select_dropdown_menu {
   border-radius: 5px;
   border: 1px solid #cdd5e6;
   color: #25324b;
   cursor: pointer;
   font-weight: 600;
   opacity: .7;
+  outline: none;
   padding: 10px;
 }
-#wrapper form #template_question_container .template_question .question_header #duplicate_delete_btn {
+#wrapper form #template_question_container .template_question .question_header .duplicate_delete_btn {
   display: flex;
   justify-content: space-between;
   width: 50px;
 }
-#wrapper form #template_question_container .template_question .question_header #duplicate_delete_btn .duplicate_btn,
-#wrapper form #template_question_container .template_question .question_header #duplicate_delete_btn .delete_btn {
+#wrapper form #template_question_container .template_question .question_header .duplicate_delete_btn .duplicate_btn,
+#wrapper form #template_question_container .template_question .question_header .duplicate_delete_btn .delete_btn {
   background-color: transparent;
   border: none;
   color: #a3afc9;
   cursor: pointer;
 }
-#wrapper form #template_question_container .template_question .multiple_choice_question {
+#wrapper form #template_question_container .template_question .question_content {
   width: 100%;
 }
-#wrapper form #template_question_container .template_question .multiple_choice_question .hidden {
+#wrapper form #template_question_container .template_question .question_content .multiple_choice_content {
+  width: 100%;
+}
+#wrapper form #template_question_container .template_question .question_content .multiple_choice_content .hidden {
   display: none;
 }
-#wrapper form #template_question_container .template_question .multiple_choice_question .question_option_answer {
+#wrapper form #template_question_container .template_question .question_content .multiple_choice_content .question_option_answer {
   align-items: center;
   display: flex;
   margin-bottom: 5px;
 }
-#wrapper form #template_question_container .template_question .multiple_choice_question .question_option_answer:hover .remove_option_answer_btn {
+#wrapper form #template_question_container .template_question .question_content .multiple_choice_content .question_option_answer:hover .remove_option_answer_btn {
   display: inline-block;
   background-color: transparent;
   border: none;
   vertical-align: top;
 }
-#wrapper form #template_question_container .template_question .multiple_choice_question .question_option_answer .radio_option {
+#wrapper form #template_question_container .template_question .question_content .multiple_choice_content .question_option_answer .radio_option {
   border-radius: 50%;
   border: 1px solid black;
   display: inline-flex;
@@ -165,37 +169,37 @@
   margin-right: 10px;
   width: 24px;
 }
-#wrapper form #template_question_container .template_question .multiple_choice_question .question_option_answer .option_text {
+#wrapper form #template_question_container .template_question .question_content .multiple_choice_content .question_option_answer .option_text {
   border: none;
   color: #626C7F;
   width: 80%;
 }
-#wrapper form #template_question_container .template_question .multiple_choice_question .question_option_answer .option_text:focus {
+#wrapper form #template_question_container .template_question .question_content .multiple_choice_content .question_option_answer .option_text:focus {
   outline: none;
   border-bottom: 1px solid #0faf93;
 }
-#wrapper form #template_question_container .template_question .multiple_choice_question .question_option_answer .remove_option_answer_btn {
+#wrapper form #template_question_container .template_question .question_content .multiple_choice_content .question_option_answer .remove_option_answer_btn {
   display: none;
 }
-#wrapper form #template_question_container .template_question .multiple_choice_question #add_option_action {
+#wrapper form #template_question_container .template_question .question_content .multiple_choice_content .add_option_action {
   display: flex;
   flex-wrap: wrap;
 }
-#wrapper form #template_question_container .template_question .multiple_choice_question #add_option_action .choice_option {
+#wrapper form #template_question_container .template_question .question_content .multiple_choice_content .add_option_action .choice_option {
   width: 100%;
 }
-#wrapper form #template_question_container .template_question .multiple_choice_question #add_option_action .add_option_container {
-  display: flex;
+#wrapper form #template_question_container .template_question .question_content .multiple_choice_content .add_option_action .add_option_container {
+  display: -webkit-inline-box;
   width: 100%;
 }
-#wrapper form #template_question_container .template_question .multiple_choice_question #add_option_action .radio_option {
+#wrapper form #template_question_container .template_question .question_content .multiple_choice_content .add_option_action .radio_option {
   border-radius: 50%;
   border: 1px solid #626C7F;
   height: 24px;
   margin-right: 10px;
   width: 24px;
 }
-#wrapper form #template_question_container .template_question .multiple_choice_question #add_option_action .add_option_btn {
+#wrapper form #template_question_container .template_question .question_content .multiple_choice_content .add_option_action .add_option_btn {
   background-color: transparent;
   border: none;
   color: #626C7F;
@@ -203,13 +207,13 @@
   text-align: left;
   width: 100%;
 }
-#wrapper form #template_question_container .template_question .paragraph_container {
+#wrapper form #template_question_container .template_question .paragraph_content {
   width: 100%;
 }
-#wrapper form #template_question_container .template_question .paragraph_container .hidden {
+#wrapper form #template_question_container .template_question .paragraph_content .hidden {
   display: none;
 }
-#wrapper form #template_question_container .template_question .paragraph_container .paragraph_textarea {
+#wrapper form #template_question_container .template_question .paragraph_content .paragraph_textarea {
   border-top: none;
   border-left: none;
   border-right: none;
@@ -218,14 +222,14 @@
   resize: none;
   width: 100%;
 }
-#wrapper form #template_question_container .template_question .paragraph_container .paragraph_textarea:focus {
+#wrapper form #template_question_container .template_question .paragraph_content .paragraph_textarea:focus {
   border-bottom: 1px solid #0faf93;
   outline: none;
 }
-#wrapper form #add_question_container {
+#wrapper form #add_question_content {
   padding: 0 25px;
 }
-#wrapper form #add_question_container #add_question_btn {
+#wrapper form #add_question_content #add_question_btn {
   background-color: transparent;
   border-radius: 5px;
   border: 1px solid #0faf93;
@@ -247,7 +251,7 @@
 .modal #delete_modal_form p {
   margin-bottom: 10px;
 }
-.modal #delete_modal_form .action_btn .delete_btn_template,
+.modal #delete_modal_form .action_btn .delete_question_btn,
 .modal #delete_modal_form .action_btn .cancel_btn {
   border-radius: 5px;
   border: 1px solid #626C7F;

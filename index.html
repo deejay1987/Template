@@ -27,57 +27,86 @@
             </div>
 
             <!-- Sample template title -->
-            <div id="sample_template_container">
-                <textarea name="" id="sample_template" cols="30" rows="10" placeholder="Sample Template"></textarea>
+            <div id="sample_template_title">
+                <textarea name="" id="sample_template" placeholder="Sample Template"></textarea>
             </div>
             
             <!-- Template question -->
             <div id="template_question_container">
-                <div data-template-id="1" class="template_question template_question_clone">
+                <div data-question_id="1" class="template_question" id="template_question_1" >
                     <div class="question_header">
-                        <select name="" id="select_dropdown_menu">
-                            <option value="1" selected="selected" >Multiple Choice</option>
+                        <select name="" class="select_dropdown_menu">
+                            <option value="1">Multiple Choice</option>
                             <option value="2">Paragraph</option>
                         </select>
-                        <div id="duplicate_delete_btn">
+                        <div class="duplicate_delete_btn">
                             <button type="button" class="duplicate_btn"><i class="fa fa-copy"></i></button>
-                            <button type="button" id="delete_btn" class="delete_btn"><i class="fa fa-trash-can"></i></button>
+                            <button type="button" class="delete_btn"><i class="fa fa-trash-can"></i></button>
                         </div>
                     </div>
 
-                    <textarea class="write_question_here" placeholder="Write question here"></textarea>
+                    <textarea class="question_title" placeholder="Write question here"></textarea>
 
                     <!-- Input multiple choice option -->
-                    <div class="multiple_choice_question">
-                        <div class="hidden question_option_answer question_option_answer_clone">
-                            <div class="radio_option"></div>
-                            <input type="text" class="option_text" placeholder="Type your answer here">
-                            <button type="button" class="remove_option_answer_btn"><i class="fa fa-close"></i></button>
-                        </div>
-                        <div id="add_option_action">
-                            <div class="choice_option"></div>
-                            <div class="add_option_container">
-                                <div class="radio_option"></div>
-                                <button type="button" class="add_option_btn">Add option</button>
+                    <div class="question_content">
+                        <div class="multiple_choice_content">
+                            <div class="question_option_answer"></div>
+                            <div class="add_option_action">
+                                <div class="choice_option"></div>
+                                <div class="add_option_container">
+                                    <div class="radio_option"></div>
+                                    <button type="button" class="add_option_btn">Add option</button>
+                                </div>
                             </div>
                         </div>
-                    </div>
-
-                    <div class="paragraph_container">
-                        <textarea class="hidden paragraph_textarea" placeholder="Type your question here"></textarea>
                     </div>
                 </div>
             </div>
             <!-- Add question button -->
-            <div id="add_question_container">
+            <div id="add_question_content">
                 <button type="button" id="add_question_btn">+ Add Question</button>
             </div>
         </form>
-        </section>
     </div>
 
+    <!-- elements clone block -->
+    <div id="elements_clone_block" class="hidden">
+        <div data-question_id="0" class="template_question template_question_clone">
+            <div class="question_header">
+                <select name="" class="select_dropdown_menu">
+                    <option value="1">Multiple Choice</option>
+                    <option value="2">Paragraph</option>
+                </select>
+                <div class="duplicate_delete_btn">
+                    <button type="button" class="duplicate_btn"><i class="fa fa-copy"></i></button>
+                    <button type="button" class="delete_btn"><i class="fa fa-trash-can"></i></button>
+                </div>
+            </div>
+
+            <textarea class="question_title question_title_clone" placeholder="Write question here"></textarea>
+            <div class="question_content"></div>
+        </div>
+
+        <!-- Multiple choice content  -->
+        <div class="multiple_choice_content multiple_choice_content_clone">
+            <div class="question_option_answer"></div>
+            <div class="add_option_action">
+                <div class="choice_option"></div>
+                <div class="add_option_container">
+                    <div class="radio_option"></div>
+                    <button type="button" class="add_option_btn">Add option</button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Paragraph content -->
+        <div class="paragraph_content paragraph_content_clone">
+            <textarea class="paragraph_textarea" placeholder="Paragraph answer here"></textarea>
+        </div>
+    </div>
+<!-- ############################################################################################################################################### -->
     <!-- Delete Modal -->
-    <div class="modal fade" id="delete_template_modal" tabindex="-1" aria-hidden="true">
+    <div class="modal fade" id="delete_question_modal" tabindex="-1" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-body add_pet_modal">
@@ -86,9 +115,9 @@
                         <p>Are you sure?</p>
                         <p>This action cannot be done.</p>
                         <div class="action_btn">
-                            <input type="hidden" class="delete_template_id" value="">
-                            <button type="button" class="delete_btn_template">Delete</button>
-                            <button type="button" class="cancel_btn" aria-label="Cancel">Cancel</button>
+                            <input type="hidden" class="delete_question" value="">
+                            <button type="button" class="delete_question_btn">Delete</button>
+                            <button type="button" class="cancel_btn" data-bs-dismiss="modal" aria-label="Cancel">Cancel</button>
                         </div>
                     </form>
                 </div>
@@ -98,3 +127,6 @@
     <script src="./assets/js/custom/script.js"></script>
 </body>
 </html>    
+
+
+<!-- shortcut keys of VS Code -->

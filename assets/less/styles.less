@@ -53,7 +53,7 @@
                 }
             }
         }
-        #sample_template_container{
+        #sample_template_title{
             margin-bottom: 30px;
             padding: 0 25px;
             #sample_template{
@@ -86,7 +86,7 @@
                 flex-wrap: wrap;
                 margin-bottom: 32px;
                 padding: 25px;
-                .write_question_here{
+                .question_title{
                     border-bottom: 1px solid #cdd5e6;
                     border-left: none;
                     border-right: none;
@@ -106,7 +106,6 @@
                         font-size: 16px;
                     }
                 }
-                
                 .question_header{
                     align-items: center;
                     display: flex;
@@ -114,16 +113,17 @@
                     justify-content: space-between;
                     margin-bottom: 40px;
                     width: 100%;
-                    #select_dropdown_menu{
+                    .select_dropdown_menu{
                         border-radius: 5px;
                         border: 1px solid #cdd5e6;
                         color: #25324b;
                         cursor: pointer;
                         font-weight: 600;
                         opacity: .7;
+                        outline: none;
                         padding: 10px;
                     }
-                    #duplicate_delete_btn{
+                    .duplicate_delete_btn{
                         display: flex;
                         justify-content: space-between;
                         width: 50px;
@@ -135,70 +135,73 @@
                         }
                     }
                 }
-                .multiple_choice_question{
+                .question_content{
                     width: 100%;
-                    .hidden{
-                        display: none;
-                    }
-                    .question_option_answer{
-                        align-items: center;
-                        display: flex;
-                        margin-bottom: 5px;
-                        &:hover .remove_option_answer_btn{
-                            display: inline-block;
-                            background-color: transparent;
-                            border: none;
-                            vertical-align: top;
-                        }
-                        .radio_option{
-                            border-radius: 50%;
-                            border: 1px solid black;
-                            display: inline-flex;
-                            height: 24px;
-                            margin-right: 10px;
-                            width: 24px;
-                        }
-                        .option_text{
-                            border: none;
-                            color: #626C7F;
-                            width: 80%;
-                            &:focus{
-                                outline: none;
-                                border-bottom: 1px solid #0faf93;
-                            }
-                        }
-                        .remove_option_answer_btn{
+                    .multiple_choice_content{
+                        width: 100%;
+                        .hidden{
                             display: none;
-                         }
-                    }
-                    #add_option_action{
-                        display: flex;
-                        flex-wrap: wrap;
-                        .choice_option{
-                            width: 100%;
                         }
-                        .add_option_container{
+                        .question_option_answer{
+                            align-items: center;
                             display: flex;
-                            width: 100%;
+                            margin-bottom: 5px;
+                            &:hover .remove_option_answer_btn{
+                                display: inline-block;
+                                background-color: transparent;
+                                border: none;
+                                vertical-align: top;
+                            }
+                            .radio_option{
+                                border-radius: 50%;
+                                border: 1px solid black;
+                                display: inline-flex;
+                                height: 24px;
+                                margin-right: 10px;
+                                width: 24px;
+                            }
+                            .option_text{
+                                border: none;
+                                color: #626C7F;
+                                width: 80%;
+                                &:focus{
+                                    outline: none;
+                                    border-bottom: 1px solid #0faf93;
+                                }
+                            }
+                            .remove_option_answer_btn{
+                                display: none;
+                             }
                         }
-                        .radio_option{
-                            border-radius: 50%;
-                            border: 1px solid #626C7F;
-                            height: 24px;
-                            margin-right: 10px;
-                            width: 24px;
-                        }
-                        .add_option_btn{
-                            background-color: transparent;
-                            border: none;
-                            color: #626C7F;
-                            cursor: pointer;
-                            text-align: left;
-                            width: 100%;
+                        .add_option_action{
+                            display: flex;
+                            flex-wrap: wrap;
+                            .choice_option{
+                                width: 100%;
+                            }
+                            .add_option_container{
+                                display: -webkit-inline-box;
+                                width: 100%;
+                            }
+                            .radio_option{
+                                border-radius: 50%;
+                                border: 1px solid #626C7F;
+                                height: 24px;
+                                margin-right: 10px;
+                                width: 24px;
+                            }
+                            .add_option_btn{
+                                background-color: transparent;
+                                border: none;
+                                color: #626C7F;
+                                cursor: pointer;
+                                text-align: left;
+                                width: 100%;
+                            }
                         }
                     }
                 }
-                .paragraph_container{
+                .paragraph_content{
                     width: 100%;
                     .hidden{
                         display: none;
@@ -219,7 +222,7 @@
                 }
             }
         }
-        #add_question_container{
+        #add_question_content{
             padding: 0 25px;
             #add_question_btn{
                 background-color: transparent;
@@ -247,7 +250,7 @@
             margin-bottom: 10px;
         }
         .action_btn{
-            .delete_btn_template, .cancel_btn{
+            .delete_question_btn, .cancel_btn{
                 border-radius: 5px;
                 border: 1px solid #626C7F;
                 color: #25324b;
