@@ -80,6 +80,7 @@ $(document).ready(function(){
         })
         .on("change", ".select_dropdown_menu", function() {
             let select_dropdown_menu = $(this);
+            let value = select_dropdown_menu.val();
             // find parent template_question
             let template_question = select_dropdown_menu.closest(".template_question");
             let question_content = template_question.find(".question_content");
@@ -91,8 +92,20 @@ $(document).ready(function(){
             multiple_choice_content_clone.find(".question_option_answer").empty();
             multiple_choice_content_clone.find(".question_option_answer").removeClass("question_option_answer_clone");
 
-            // base on value on dropdown, clone and append content to question_content
-            if(select_dropdown_menu.val() == "1"){
+            /* Will add attribute to the selected option */
+            $("select option").each(function()   {
+                let selected_option = $(this);
+
+                if(selected_option.val() == value){
+                    selected_option.attr("selected","selected");
+                }
+                else{
+                    selected_option.removeAttr("selected");
+                }
+            });
+
+            /* base on value on dropdown, clone and append content to question_content */
+            if(value == "1"){
                 question_content.html(multiple_choice_content_clone);
             }
             else{
@@ -100,5 +113,5 @@ $(document).ready(function(){
             }
             /* To do */
             /* add selected = "selected" to clicked option */
-        })
+        });
 });
