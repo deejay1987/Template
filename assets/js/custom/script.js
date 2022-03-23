@@ -93,7 +93,7 @@ $(document).ready(function(){
             multiple_choice_content_clone.find(".question_option_answer").removeClass("question_option_answer_clone");
 
             /* Will add attribute to the selected option */
-            $("select option").each(function()   {
+            template_question.find("select option").each(function() {
                 let selected_option = $(this);
 
                 if(selected_option.val() == value){
